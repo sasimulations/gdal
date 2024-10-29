@@ -65,10 +65,10 @@ CADVector::CADVector( const CADVector& other )
     bHasZ = other.bHasZ;
 }
 
-bool CADVector::operator==( const CADVector& second )
+bool CADVector::operator==(const CADVector &second) const
 {
-    return ( fcmp( this->X, second.X ) && fcmp( this->Y, second.Y ) &&
-                                                    fcmp( this->Z, second.Z ) );
+  return (fcmp(this->X, second.X) && fcmp(this->Y, second.Y) &&
+    fcmp(this->Z, second.Z));
 }
 
 CADVector& CADVector::operator=( const CADVector& second )

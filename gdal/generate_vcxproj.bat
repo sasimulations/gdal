@@ -52,7 +52,10 @@ set _vcver_=%1
 set _clver_=1600
 set _vstoolset_=v100
 
-if "%_vcver_%"=="15.0" (
+if "%_vcver_%"=="17.0" (
+	set _clver_=1930
+	set _vstoolset_=v143
+) else if "%_vcver_%"=="15.0" (
 	set _clver_=1910
 	set _vstoolset_=v141
 ) else if "%_vcver_%"=="14.0" (

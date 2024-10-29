@@ -73,10 +73,12 @@ void CLinkSegment::Load()
         return;
     }
     
+    using namespace std::placeholders;
+
     path = std::string(&seg_data.buffer[8]);
     std::string::reverse_iterator first_non_space = 
         std::find_if(path.rbegin(), path.rend(), 
-                     std::bind2nd(std::not_equal_to<char>(), ' '));
+                     std::bind(std::not_equal_to<char>(), _1, ' '));
 
     *(--first_non_space) = '\0';
 
